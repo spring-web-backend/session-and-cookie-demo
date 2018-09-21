@@ -12,6 +12,7 @@
 </head>
 <body>
 <fieldset>
+    ${error}
     <legend>Login Form</legend>
     <form action="/login" method="POST">
         <table>
