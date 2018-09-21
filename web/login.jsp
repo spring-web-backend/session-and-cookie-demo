@@ -12,6 +12,23 @@
 </head>
 <body>
 <fieldset>
+    <%
+        Cookie[] listCookie = request.getCookies();
+        String user = "";
+        String pass = "";
+        int count = 0;
+        if (listCookie != null) {
+            while (count < listCookie.length) {
+                if (listCookie[count].getName().equals("user")) {
+                    user = listCookie[count].getValue();
+                }
+                if (listCookie[count].getName().equals("pass")) {
+                    pass = listCookie[count].getValue();
+                }
+                count++;
+            }
+        }
+    %>
     ${error}
     <legend>Login Form</legend>
     <form action="/login" method="POST">
